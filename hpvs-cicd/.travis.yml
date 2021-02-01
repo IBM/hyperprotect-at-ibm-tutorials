@@ -12,7 +12,7 @@ env:
     - secret: "this is a secret to push a docker image to hub.docker.com"
 
 before_script:
-  - version=IBM_CLOUDDEV_VERSION
+  - version=dev01
   - docker pull "$IMAGE_NAME" || true
 script:
   - docker build --pull --cache-from "$IMAGE_NAME" --tag "$IMAGE_NAME" .
@@ -28,4 +28,4 @@ deploy:
   provider: script
   script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}"
   on:
-    branch: master
+    branch: develop
