@@ -6,7 +6,7 @@ services:
   - docker
 env:
   global:
-    - IMAGE_NAME=sandeepbatta/ibm-cloud-dev-nginx
+    - IMAGE_NAME=sandeepbatta/hyperprotect-at-ibm-nginx
     - REGISTRY_USER=sandeepbatta
     # REGISTRY_PASS=...
     - secret: "this is a secret to push a docker image to hub.docker.com"
